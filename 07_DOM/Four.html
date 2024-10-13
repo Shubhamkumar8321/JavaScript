@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="Language">
+        <li>Javascript</li>
+        <li>Html</li>
+    </ul>
+</body>
+<script>
+    function AddLanguage(LangName) {
+        const li=document.createElement("li");
+        li.innerHTML=`${LangName}`;
+        document.querySelector('.Language').appendChild(li);
+    }
+    // AddLanguage("Java");
+    // AddLanguage("Python")
+
+    function AddOptimalLanguage(LangName) {
+        const li=document.createElement("li");
+        li.appendChild(document.createTextNode(LangName));
+        document.querySelector(".Language").appendChild(li);
+    }
+    AddOptimalLanguage("React")
+// ============Edit============
+
+const edit=document.querySelector("li:nth-child(2)")
+// edit.innerHTML="Java"     //not good Approch
+const newli=document.createElement('li')
+newli.textContent="JAVA";
+edit.replaceWith(newli)
+
+const FirstChild=document.querySelector("li:first-child")
+FirstChild.outerHTML="<li>MongoDB</li>"
+
+
+// =======================REMOVE==========
+const lastLang=document.querySelector("li:last-child");
+lastLang.remove();
+</script>
+</html>
